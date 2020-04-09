@@ -10,7 +10,7 @@
  * MAIN LINK: type-system, type-kinds, built-in-types, kotlin.nothing -> paragraph 1 -> sentence 1
  * SECONDARY LINKS: type-system, type-kinds, built-in-types, kotlin.nothing -> paragraph 2 -> sentence 1
  * NUMBER: 1
- * DESCRIPTION: Check of Nothing type is a subtype of any types
+ * DESCRIPTION: Check of Nothing type is a subtype of any types DEBUG
  * HELPERS: checkType, functions
  */
 
