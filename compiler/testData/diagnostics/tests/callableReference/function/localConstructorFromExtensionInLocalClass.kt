@@ -11,7 +11,7 @@ fun main() {
             val x = ::A
             checkSubtype<KFunction0<A>>(x)
         }
-        fun A.foo() {
+        fun <!EXPOSED_RECEIVER_TYPE!>A<!>.foo() {
             val x = ::A
             checkSubtype<KFunction0<A>>(x)
         }
