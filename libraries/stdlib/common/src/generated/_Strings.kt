@@ -1208,6 +1208,8 @@ public inline fun <S : CharSequence> S.onEachIndexed(action: (index: Int, Char) 
 
 /**
  * Accumulates value starting with the first character and applying [operation] from left to right to current accumulator value and each character.
+ * Throws an exception if this char sequence is empty. If the char sequence can be empty in an expected way,
+ * please use [CharSequence.reduceOrNull] instead. It returns `null` when its receiver is empty.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -1224,6 +1226,8 @@ public inline fun CharSequence.reduce(operation: (acc: Char, Char) -> Char): Cha
 /**
  * Accumulates value starting with the first character and applying [operation] from left to right
  * to current accumulator value and each character with its index in the original char sequence.
+ * Throws an exception if this char sequence is empty. If the char sequence can be empty in an expected way,
+ * please use [CharSequence.reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
  * @param [operation] function that takes the index of a character, current accumulator value
  * and the character itself and calculates the next accumulator value.
  * 
@@ -1278,6 +1282,8 @@ public inline fun CharSequence.reduceOrNull(operation: (acc: Char, Char) -> Char
 
 /**
  * Accumulates value starting with last character and applying [operation] from right to left to each character and current accumulator value.
+ * Throws an exception if this char sequence is empty. If the char sequence can be empty in an expected way,
+ * please use [CharSequence.reduceRightOrNull] instead. It returns `null` when its receiver is empty.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -1294,6 +1300,8 @@ public inline fun CharSequence.reduceRight(operation: (Char, acc: Char) -> Char)
 /**
  * Accumulates value starting with last character and applying [operation] from right to left
  * to each character with its index in the original char sequence and current accumulator value.
+ * Throws an exception if this char sequence is empty. If the char sequence can be empty in an expected way,
+ * please use [CharSequence.reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
  * @param [operation] function that takes the index of a character, the character itself
  * and current accumulator value, and calculates the next accumulator value.
  * 

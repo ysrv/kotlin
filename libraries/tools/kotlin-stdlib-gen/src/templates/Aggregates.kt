@@ -5,6 +5,7 @@
 
 package templates
 
+import templates.DocExtensions.collection
 import templates.DocExtensions.mapResult
 import templates.Family.*
 import templates.SequenceClass.*
@@ -643,6 +644,8 @@ object Aggregates : TemplateGroupBase() {
             """
             Accumulates value starting with the first ${f.element} and applying [operation] from left to right
             to current accumulator value and each ${f.element} with its index in the original ${f.collection}.
+            Throws an exception if this ${f.collection} is empty. If the ${f.collection} can be empty in an expected way, 
+            please use [RECEIVER.reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
             @param [operation] function that takes the index of ${f.element.prefixWithArticle()}, current accumulator value
             and the ${f.element} itself and calculates the next accumulator value.
             """
@@ -672,6 +675,8 @@ object Aggregates : TemplateGroupBase() {
             """
             Accumulates value starting with the first ${f.element} and applying [operation] from left to right
             to current accumulator value and each ${f.element} with its index in the original ${f.collection}.
+            Throws an exception if this ${f.collection} is empty. If the ${f.collection} can be empty in an expected way, 
+            please use [RECEIVER.reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
             @param [operation] function that takes the index of ${f.element.prefixWithArticle()}, current accumulator value
             and the ${f.element} itself and calculates the next accumulator value.
             """
@@ -797,6 +802,8 @@ object Aggregates : TemplateGroupBase() {
             """
             Accumulates value starting with last ${f.element} and applying [operation] from right to left
             to each ${f.element} with its index in the original ${f.collection} and current accumulator value.
+            Throws an exception if this ${f.collection} is empty. If the ${f.collection} can be empty in an expected way, 
+            please use [RECEIVER.reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
             @param [operation] function that takes the index of ${f.element.prefixWithArticle()}, the ${f.element} itself
             and current accumulator value, and calculates the next accumulator value.
             """
@@ -828,6 +835,8 @@ object Aggregates : TemplateGroupBase() {
             """
             Accumulates value starting with last ${f.element} and applying [operation] from right to left
             to each ${f.element} with its index in the original ${f.collection} and current accumulator value.
+            Throws an exception if this ${f.collection} is empty. If the ${f.collection} can be empty in an expected way, 
+            please use [RECEIVER.reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
             @param [operation] function that takes the index of ${f.element.prefixWithArticle()}, the ${f.element} itself
             and current accumulator value, and calculates the next accumulator value.
             """
@@ -957,7 +966,13 @@ object Aggregates : TemplateGroupBase() {
         inline()
         specialFor(ArraysOfUnsigned) { inlineOnly() }
 
-        doc { "Accumulates value starting with the first ${f.element} and applying [operation] from left to right to current accumulator value and each ${f.element}." }
+        doc {
+            """
+            Accumulates value starting with the first ${f.element} and applying [operation] from left to right to current accumulator value and each ${f.element}.
+            Throws an exception if this ${f.collection} is empty. If the ${f.collection} can be empty in an expected way, 
+            please use [RECEIVER.reduceOrNull] instead. It returns `null` when its receiver is empty.
+            """
+        }
         sample("samples.collections.Collections.Aggregates.reduce")
         returns("T")
         body {
@@ -979,7 +994,13 @@ object Aggregates : TemplateGroupBase() {
     } builder {
         inline()
 
-        doc { "Accumulates value starting with the first ${f.element} and applying [operation] from left to right to current accumulator value and each ${f.element}." }
+        doc {
+            """
+            Accumulates value starting with the first ${f.element} and applying [operation] from left to right to current accumulator value and each ${f.element}.
+            Throws an exception if this ${f.collection} is empty. If the ${f.collection} can be empty in an expected way, 
+            please use [RECEIVER.reduceOrNull] instead. It returns `null` when its receiver is empty.
+            """
+        }
         sample("samples.collections.Collections.Aggregates.reduce")
         typeParam("S")
         typeParam("T : S")
@@ -1079,7 +1100,13 @@ object Aggregates : TemplateGroupBase() {
         inline()
         specialFor(ArraysOfUnsigned) { inlineOnly() }
 
-        doc { "Accumulates value starting with last ${f.element} and applying [operation] from right to left to each ${f.element} and current accumulator value." }
+        doc {
+            """
+            Accumulates value starting with last ${f.element} and applying [operation] from right to left to each ${f.element} and current accumulator value.
+            Throws an exception if this ${f.collection} is empty. If the ${f.collection} can be empty in an expected way, 
+            please use [RECEIVER.reduceRightOrNull] instead. It returns `null` when its receiver is empty.
+            """
+        }
         sample("samples.collections.Collections.Aggregates.reduceRight")
         returns("T")
         body {
@@ -1101,7 +1128,13 @@ object Aggregates : TemplateGroupBase() {
         include(Lists, ArraysOfObjects)
     } builder {
         inline()
-        doc { "Accumulates value starting with last ${f.element} and applying [operation] from right to left to each ${f.element} and current accumulator value." }
+        doc {
+            """
+            Accumulates value starting with last ${f.element} and applying [operation] from right to left to each ${f.element} and current accumulator value.
+            Throws an exception if this ${f.collection} is empty. If the ${f.collection} can be empty in an expected way, 
+            please use [RECEIVER.reduceRightOrNull] instead. It returns `null` when its receiver is empty.
+            """
+        }
         sample("samples.collections.Collections.Aggregates.reduceRight")
         typeParam("S")
         typeParam("T : S")

@@ -6064,6 +6064,8 @@ public inline fun UShortArray.onEachIndexed(action: (index: Int, UShort) -> Unit
 
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [UIntArray.reduceOrNull] instead. It returns `null` when its receiver is empty.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -6082,6 +6084,8 @@ public inline fun UIntArray.reduce(operation: (acc: UInt, UInt) -> UInt): UInt {
 
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [ULongArray.reduceOrNull] instead. It returns `null` when its receiver is empty.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -6100,6 +6104,8 @@ public inline fun ULongArray.reduce(operation: (acc: ULong, ULong) -> ULong): UL
 
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [UByteArray.reduceOrNull] instead. It returns `null` when its receiver is empty.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -6118,6 +6124,8 @@ public inline fun UByteArray.reduce(operation: (acc: UByte, UByte) -> UByte): UB
 
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [UShortArray.reduceOrNull] instead. It returns `null` when its receiver is empty.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -6137,6 +6145,8 @@ public inline fun UShortArray.reduce(operation: (acc: UShort, UShort) -> UShort)
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [UIntArray.reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
  * @param [operation] function that takes the index of an element, current accumulator value
  * and the element itself and calculates the next accumulator value.
  * 
@@ -6158,6 +6168,8 @@ public inline fun UIntArray.reduceIndexed(operation: (index: Int, acc: UInt, UIn
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [ULongArray.reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
  * @param [operation] function that takes the index of an element, current accumulator value
  * and the element itself and calculates the next accumulator value.
  * 
@@ -6179,6 +6191,8 @@ public inline fun ULongArray.reduceIndexed(operation: (index: Int, acc: ULong, U
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [UByteArray.reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
  * @param [operation] function that takes the index of an element, current accumulator value
  * and the element itself and calculates the next accumulator value.
  * 
@@ -6200,6 +6214,8 @@ public inline fun UByteArray.reduceIndexed(operation: (index: Int, acc: UByte, U
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [UShortArray.reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
  * @param [operation] function that takes the index of an element, current accumulator value
  * and the element itself and calculates the next accumulator value.
  * 
@@ -6384,6 +6400,8 @@ public inline fun UShortArray.reduceOrNull(operation: (acc: UShort, UShort) -> U
 
 /**
  * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [UIntArray.reduceRightOrNull] instead. It returns `null` when its receiver is empty.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -6402,6 +6420,8 @@ public inline fun UIntArray.reduceRight(operation: (UInt, acc: UInt) -> UInt): U
 
 /**
  * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [ULongArray.reduceRightOrNull] instead. It returns `null` when its receiver is empty.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -6420,6 +6440,8 @@ public inline fun ULongArray.reduceRight(operation: (ULong, acc: ULong) -> ULong
 
 /**
  * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [UByteArray.reduceRightOrNull] instead. It returns `null` when its receiver is empty.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -6438,6 +6460,8 @@ public inline fun UByteArray.reduceRight(operation: (UByte, acc: UByte) -> UByte
 
 /**
  * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [UShortArray.reduceRightOrNull] instead. It returns `null` when its receiver is empty.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -6457,6 +6481,8 @@ public inline fun UShortArray.reduceRight(operation: (UShort, acc: UShort) -> US
 /**
  * Accumulates value starting with last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [UIntArray.reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
  * @param [operation] function that takes the index of an element, the element itself
  * and current accumulator value, and calculates the next accumulator value.
  * 
@@ -6479,6 +6505,8 @@ public inline fun UIntArray.reduceRightIndexed(operation: (index: Int, UInt, acc
 /**
  * Accumulates value starting with last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [ULongArray.reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
  * @param [operation] function that takes the index of an element, the element itself
  * and current accumulator value, and calculates the next accumulator value.
  * 
@@ -6501,6 +6529,8 @@ public inline fun ULongArray.reduceRightIndexed(operation: (index: Int, ULong, a
 /**
  * Accumulates value starting with last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [UByteArray.reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
  * @param [operation] function that takes the index of an element, the element itself
  * and current accumulator value, and calculates the next accumulator value.
  * 
@@ -6523,6 +6553,8 @@ public inline fun UByteArray.reduceRightIndexed(operation: (index: Int, UByte, a
 /**
  * Accumulates value starting with last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * Throws an exception if this array is empty. If the array can be empty in an expected way,
+ * please use [UShortArray.reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
  * @param [operation] function that takes the index of an element, the element itself
  * and current accumulator value, and calculates the next accumulator value.
  * 

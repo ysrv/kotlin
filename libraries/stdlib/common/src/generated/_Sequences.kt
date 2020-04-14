@@ -1373,6 +1373,8 @@ public fun <T> Sequence<T>.onEachIndexed(action: (index: Int, T) -> Unit): Seque
 
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Throws an exception if this sequence is empty. If the sequence can be empty in an expected way,
+ * please use [Sequence.reduceOrNull] instead. It returns `null` when its receiver is empty.
  *
  * The operation is _terminal_.
  * 
@@ -1391,6 +1393,8 @@ public inline fun <S, T : S> Sequence<T>.reduce(operation: (acc: S, T) -> S): S 
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original sequence.
+ * Throws an exception if this sequence is empty. If the sequence can be empty in an expected way,
+ * please use [Sequence.reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
  * @param [operation] function that takes the index of an element, current accumulator value
  * and the element itself and calculates the next accumulator value.
  *
