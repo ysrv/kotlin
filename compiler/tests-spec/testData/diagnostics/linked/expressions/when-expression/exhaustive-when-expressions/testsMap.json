@@ -526,7 +526,7 @@
           "description": "Branch false bypass else",
           "path": "compiler/testData/diagnostics/tests/when/BranchFalseBypassElse.kt",
           "unexpectedBehaviour": false,
-          "linkType": "main"
+          "linkType": "primary"
         },
         {
           "specVersion": "0.1-152",
@@ -606,7 +606,7 @@
           "description": "Branch false bypass",
           "path": "compiler/testData/diagnostics/tests/when/BranchFalseBypass.kt",
           "unexpectedBehaviour": false,
-          "linkType": "main"
+          "linkType": "primary"
         },
         {
           "specVersion": "0.1-152",
@@ -778,7 +778,7 @@
           "description": "Branch bypass val",
           "path": "compiler/testData/diagnostics/tests/when/BranchBypassVal.kt",
           "unexpectedBehaviour": false,
-          "linkType": "main"
+          "linkType": "primary"
         },
         {
           "specVersion": "0.1-152",
@@ -810,7 +810,7 @@
           "description": "Branch bypass var",
           "path": "compiler/testData/diagnostics/tests/when/BranchBypassVar.kt",
           "unexpectedBehaviour": false,
-          "linkType": "main"
+          "linkType": "primary"
         },
         {
           "specVersion": "0.1-152",
