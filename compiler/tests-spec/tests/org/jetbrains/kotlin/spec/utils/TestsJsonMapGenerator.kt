@@ -83,7 +83,7 @@ object TestsJsonMapGenerator {
                     if (!file.isFile || file.extension != "kt") return@testFiles
                     if (!LinkedSpecTestPatterns.testInfoPattern.matcher(file.readText()).find())
                         return@testFiles
-                    val (specTest, _) = CommonParser.parseImplTest(file.canonicalPath, mapOf("main.kt" to file.readText()))
+                    val (specTest, _) = CommonParser.parseImplementationTest(file.canonicalPath, mapOf("main.kt" to file.readText()))
                     collectInfoFromTests(testsMap, specTest, getTestInfo(specTest, file))
                 }
         }

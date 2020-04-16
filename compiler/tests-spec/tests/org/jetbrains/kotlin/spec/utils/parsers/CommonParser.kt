@@ -35,8 +35,9 @@ object CommonParser {
     private fun parseBasePath(pathPartRegex: String, testFilePath: String) =
         Pattern.compile(testPathBaseRegexTemplate.format(pathPartRegex)).matcher(testFilePath)
 
-    fun parseImplTest(testFilePath: String, files: TestFiles): Pair<LinkedSpecTest, SpecTestLinkedType> =
-        Pair(parseLinkedSpecTest(testFilePath, files, isImplementationTest = true), SpecTestLinkedType.LINKED)
+    fun parseImplementationTest(testFilePath: String, testFiles: TestFiles): Pair<LinkedSpecTest, SpecTestLinkedType> {
+        return parseLinkedSpecTest(testFilePath, testFiles, isImplementationTest = true) to SpecTestLinkedType.LINKED
+    }
 
     fun parseSpecTest(testFilePath: String, files: TestFiles) = when {
         isPathMatched(LinkedSpecTestPatterns.pathPartRegex, testFilePath) ->
@@ -60,11 +61,9 @@ object CommonParser {
     ) {
         if (placesMatcher == null)
             return
-        placesMatcher?.let {
-            relevantPlaces.add(createSpecPlace(it, placesMatcher))
-            while (it.find()) {
-                relevantPlaces.add(createSpecPlace(it, placesMatcher))
-            }
+        relevantPlaces.add(createSpecPlace(placesMatcher))
+        while (placesMatcher.find()) {
+            relevantPlaces.add(createSpecPlace(placesMatcher))
         }
     }
 
@@ -157,9 +156,9 @@ object CommonParser {
         rawElements: String,
     ) = when (testInfoOriginalElementName) {
         LinkedSpecTestPatterns.PRIMARY_LINKS ->
-            groupRelevantAndAlternativePlaces(LinkedSpecTestPatterns.primaryLinks, rawElements, testInfoOriginalElementName)
+            groupRelevantLinks(LinkedSpecTestPatterns.primaryLinks, rawElements, testInfoOriginalElementName)
         LinkedSpecTestPatterns.SECONDARY_LINKS ->
-            groupRelevantAndAlternativePlaces(LinkedSpecTestPatterns.secondaryLinks, rawElements, testInfoOriginalElementName)
+            groupRelevantLinks(LinkedSpecTestPatterns.secondaryLinks, rawElements, testInfoOriginalElementName)
         else ->
             testInfoElementMatcher.group("value")
     }
@@ -204,8 +203,8 @@ object CommonParser {
     }
 
 
-    private fun groupRelevantAndAlternativePlaces(placesPattern: Pattern, rawElements: String, linkType: String): String {
-        val placesMatcher = placesPattern.matcher(rawElements)
+    private fun groupRelevantLinks(linksPattern: Pattern, rawElements: String, linkType: String): String {
+        val placesMatcher = linksPattern.matcher(rawElements)
         if (placesMatcher.find()) {
             return placesMatcher.group("places")
         } else throw Exception("$linkType link is incorrect")
