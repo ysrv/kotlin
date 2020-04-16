@@ -80,18 +80,11 @@ object CommonParser {
 
         val placeMatcher = testInfoElements[LinkedSpecTestFileInfoElementType.MAIN_LINK]?.additionalMatcher
 
-        val mainPlace: SpecPlace
-        if (placeMatcher != null) {
-            mainPlace = createSpecPlace(placeMatcher)
-        } else {
-            mainPlace = primaryLinks.first()
-            primaryLinks.remove(mainPlace)
-        }
         return LinkedSpecTest(
             testInfoElements[LinkedSpecTestFileInfoElementType.SPEC_VERSION]!!.content,
             parsedTestFile.testArea,
             parsedTestFile.testType,
-            mainPlace,
+            placeMatcher?.let { createSpecPlace(placeMatcher) },
             primaryLinks,
             secondaryLinks,
             parsedTestFile.testNumber,

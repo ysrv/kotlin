@@ -91,9 +91,9 @@ class LinkedSpecTest(
         super.getUnexpectedBehaviourText()?.let { append(it + ls) }
         append("${testArea.name.withSpaces()} $testType SPEC TEST (${testType.toString().withSpaces()})$ls")
         append("SPEC VERSION: $specVersion$ls")
-        mainLink?.let { append("SPEC PLACE: ${sections.joinToString()} -> paragraph: ${mainLink.paragraphNumber} -> sentence: ${mainLink.sentenceNumber}$ls") }
-        primaryLinks?.let { append("PRIMARY LINKS:${primaryLinks.buildToString()}$ls") }
-        secondaryLinks?.let { append("SECONDARY LINKS:${secondaryLinks.buildToString()}$ls") }
+        mainLink?.let { append("MAIN LINK: ${sections.joinToString()} -> paragraph: ${mainLink.paragraphNumber} -> sentence: ${mainLink.sentenceNumber}$ls") }
+        primaryLinks?.let { append("PRIMARY LINKS: ${primaryLinks.buildToString()}$ls") }
+        secondaryLinks?.let { append("SECONDARY LINKS: ${secondaryLinks.buildToString()}$ls") }
         append("NUMBER: $testNumber$ls")
         append("TEST CASES: ${cases.byNumbers.size.coerceAtLeast(1)}$ls")
         append("DESCRIPTION: $description$ls")
@@ -102,8 +102,8 @@ class LinkedSpecTest(
 
     private fun Set<SpecPlace>.buildToString(): String {
         val builder = StringBuilder()
-        this.stream().forEach {
-            builder.append("$ls\t${sections.joinToString()} -> paragraph: ${it.paragraphNumber} -> sentence: ${it.sentenceNumber}$ls")
+        this.forEach {
+            builder.append("${sections.joinToString()} -> paragraph: ${it.paragraphNumber} -> sentence: ${it.sentenceNumber}$ls")
         }
         return builder.toString()
     }
