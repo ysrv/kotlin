@@ -145,6 +145,7 @@ internal open class GradleCompilerRunner(protected val task: Task) {
     }
 
     protected open fun runCompilerAsync(workArgs: GradleKotlinCompilerWorkArguments) {
+        GradleKotlinCompilerWork.project = project
         val kotlinCompilerRunnable = GradleKotlinCompilerWork(workArgs)
         kotlinCompilerRunnable.run()
     }
@@ -170,6 +171,7 @@ internal open class GradleCompilerRunner(protected val task: Task) {
 
         @Volatile
         private var cachedGradle = WeakReference<Gradle>(null)
+
         @Volatile
         private var cachedModulesInfo: IncrementalModuleInfo? = null
 
