@@ -13700,9 +13700,14 @@ public inline fun CharArray.onEachIndexed(action: (index: Int, Char) -> Unit): C
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13717,9 +13722,14 @@ public inline fun <S, T : S> Array<out T>.reduce(operation: (acc: S, T) -> S): S
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13734,9 +13744,14 @@ public inline fun ByteArray.reduce(operation: (acc: Byte, Byte) -> Byte): Byte {
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13751,9 +13766,14 @@ public inline fun ShortArray.reduce(operation: (acc: Short, Short) -> Short): Sh
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13768,9 +13788,14 @@ public inline fun IntArray.reduce(operation: (acc: Int, Int) -> Int): Int {
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13785,9 +13810,14 @@ public inline fun LongArray.reduce(operation: (acc: Long, Long) -> Long): Long {
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13802,9 +13832,14 @@ public inline fun FloatArray.reduce(operation: (acc: Float, Float) -> Float): Fl
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13819,9 +13854,14 @@ public inline fun DoubleArray.reduce(operation: (acc: Double, Double) -> Double)
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13836,9 +13876,14 @@ public inline fun BooleanArray.reduce(operation: (acc: Boolean, Boolean) -> Bool
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13855,10 +13900,12 @@ public inline fun CharArray.reduce(operation: (acc: Char, Char) -> Char): Char {
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13875,10 +13922,12 @@ public inline fun <S, T : S> Array<out T>.reduceIndexed(operation: (index: Int, 
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13895,10 +13944,12 @@ public inline fun ByteArray.reduceIndexed(operation: (index: Int, acc: Byte, Byt
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13915,10 +13966,12 @@ public inline fun ShortArray.reduceIndexed(operation: (index: Int, acc: Short, S
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13935,10 +13988,12 @@ public inline fun IntArray.reduceIndexed(operation: (index: Int, acc: Int, Int) 
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13955,10 +14010,12 @@ public inline fun LongArray.reduceIndexed(operation: (index: Int, acc: Long, Lon
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13975,10 +14032,12 @@ public inline fun FloatArray.reduceIndexed(operation: (index: Int, acc: Float, F
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -13995,10 +14054,12 @@ public inline fun DoubleArray.reduceIndexed(operation: (index: Int, acc: Double,
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -14015,10 +14076,12 @@ public inline fun BooleanArray.reduceIndexed(operation: (index: Int, acc: Boolea
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -14035,9 +14098,11 @@ public inline fun CharArray.reduceIndexed(operation: (index: Int, acc: Char, Cha
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14055,9 +14120,11 @@ public inline fun <S, T : S> Array<out T>.reduceIndexedOrNull(operation: (index:
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14075,9 +14142,11 @@ public inline fun ByteArray.reduceIndexedOrNull(operation: (index: Int, acc: Byt
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14095,9 +14164,11 @@ public inline fun ShortArray.reduceIndexedOrNull(operation: (index: Int, acc: Sh
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14115,9 +14186,11 @@ public inline fun IntArray.reduceIndexedOrNull(operation: (index: Int, acc: Int,
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14135,9 +14208,11 @@ public inline fun LongArray.reduceIndexedOrNull(operation: (index: Int, acc: Lon
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14155,9 +14230,11 @@ public inline fun FloatArray.reduceIndexedOrNull(operation: (index: Int, acc: Fl
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14175,9 +14252,11 @@ public inline fun DoubleArray.reduceIndexedOrNull(operation: (index: Int, acc: D
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14195,9 +14274,11 @@ public inline fun BooleanArray.reduceIndexedOrNull(operation: (index: Int, acc: 
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original array.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14213,7 +14294,13 @@ public inline fun CharArray.reduceIndexedOrNull(operation: (index: Int, acc: Cha
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element. Returns null if the array is empty.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14230,7 +14317,13 @@ public inline fun <S, T : S> Array<out T>.reduceOrNull(operation: (acc: S, T) ->
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element. Returns null if the array is empty.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14247,7 +14340,13 @@ public inline fun ByteArray.reduceOrNull(operation: (acc: Byte, Byte) -> Byte): 
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element. Returns null if the array is empty.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14264,7 +14363,13 @@ public inline fun ShortArray.reduceOrNull(operation: (acc: Short, Short) -> Shor
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element. Returns null if the array is empty.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14281,7 +14386,13 @@ public inline fun IntArray.reduceOrNull(operation: (acc: Int, Int) -> Int): Int?
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element. Returns null if the array is empty.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14298,7 +14409,13 @@ public inline fun LongArray.reduceOrNull(operation: (acc: Long, Long) -> Long): 
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element. Returns null if the array is empty.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14315,7 +14432,13 @@ public inline fun FloatArray.reduceOrNull(operation: (acc: Float, Float) -> Floa
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element. Returns null if the array is empty.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14332,7 +14455,13 @@ public inline fun DoubleArray.reduceOrNull(operation: (acc: Double, Double) -> D
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element. Returns null if the array is empty.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14349,7 +14478,13 @@ public inline fun BooleanArray.reduceOrNull(operation: (acc: Boolean, Boolean) -
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element. Returns null if the array is empty.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -14366,9 +14501,14 @@ public inline fun CharArray.reduceOrNull(operation: (acc: Char, Char) -> Char): 
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14383,9 +14523,14 @@ public inline fun <S, T : S> Array<out T>.reduceRight(operation: (T, acc: S) -> 
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14400,9 +14545,14 @@ public inline fun ByteArray.reduceRight(operation: (Byte, acc: Byte) -> Byte): B
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14417,9 +14567,14 @@ public inline fun ShortArray.reduceRight(operation: (Short, acc: Short) -> Short
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14434,9 +14589,14 @@ public inline fun IntArray.reduceRight(operation: (Int, acc: Int) -> Int): Int {
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14451,9 +14611,14 @@ public inline fun LongArray.reduceRight(operation: (Long, acc: Long) -> Long): L
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14468,9 +14633,14 @@ public inline fun FloatArray.reduceRight(operation: (Float, acc: Float) -> Float
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14485,9 +14655,14 @@ public inline fun DoubleArray.reduceRight(operation: (Double, acc: Double) -> Do
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14502,9 +14677,14 @@ public inline fun BooleanArray.reduceRight(operation: (Boolean, acc: Boolean) ->
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14519,12 +14699,14 @@ public inline fun CharArray.reduceRight(operation: (Char, acc: Char) -> Char): C
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14540,12 +14722,14 @@ public inline fun <S, T : S> Array<out T>.reduceRightIndexed(operation: (index: 
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14561,12 +14745,14 @@ public inline fun ByteArray.reduceRightIndexed(operation: (index: Int, Byte, acc
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14582,12 +14768,14 @@ public inline fun ShortArray.reduceRightIndexed(operation: (index: Int, Short, a
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14603,12 +14791,14 @@ public inline fun IntArray.reduceRightIndexed(operation: (index: Int, Int, acc: 
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14624,12 +14814,14 @@ public inline fun LongArray.reduceRightIndexed(operation: (index: Int, Long, acc
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14645,12 +14837,14 @@ public inline fun FloatArray.reduceRightIndexed(operation: (index: Int, Float, a
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14666,12 +14860,14 @@ public inline fun DoubleArray.reduceRightIndexed(operation: (index: Int, Double,
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14687,12 +14883,14 @@ public inline fun BooleanArray.reduceRightIndexed(operation: (index: Int, Boolea
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Throws an exception if this array is empty. If the array can be empty in an expected way,
  * please use [reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -14708,11 +14906,13 @@ public inline fun CharArray.reduceRightIndexed(operation: (index: Int, Char, acc
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14729,11 +14929,13 @@ public inline fun <S, T : S> Array<out T>.reduceRightIndexedOrNull(operation: (i
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14750,11 +14952,13 @@ public inline fun ByteArray.reduceRightIndexedOrNull(operation: (index: Int, Byt
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14771,11 +14975,13 @@ public inline fun ShortArray.reduceRightIndexedOrNull(operation: (index: Int, Sh
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14792,11 +14998,13 @@ public inline fun IntArray.reduceRightIndexedOrNull(operation: (index: Int, Int,
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14813,11 +15021,13 @@ public inline fun LongArray.reduceRightIndexedOrNull(operation: (index: Int, Lon
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14834,11 +15044,13 @@ public inline fun FloatArray.reduceRightIndexedOrNull(operation: (index: Int, Fl
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14855,11 +15067,13 @@ public inline fun DoubleArray.reduceRightIndexedOrNull(operation: (index: Int, D
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14876,11 +15090,13 @@ public inline fun BooleanArray.reduceRightIndexedOrNull(operation: (index: Int, 
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left
+ * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original array and current accumulator value.
+ * 
  * Returns null if the array is empty.
- * @param [operation] function that takes the index of an element, the element itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14897,7 +15113,13 @@ public inline fun CharArray.reduceRightIndexedOrNull(operation: (index: Int, Cha
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value. Returns null if the array is empty.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14914,7 +15136,13 @@ public inline fun <S, T : S> Array<out T>.reduceRightOrNull(operation: (T, acc: 
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value. Returns null if the array is empty.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14931,7 +15159,13 @@ public inline fun ByteArray.reduceRightOrNull(operation: (Byte, acc: Byte) -> By
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value. Returns null if the array is empty.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14948,7 +15182,13 @@ public inline fun ShortArray.reduceRightOrNull(operation: (Short, acc: Short) ->
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value. Returns null if the array is empty.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14965,7 +15205,13 @@ public inline fun IntArray.reduceRightOrNull(operation: (Int, acc: Int) -> Int):
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value. Returns null if the array is empty.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14982,7 +15228,13 @@ public inline fun LongArray.reduceRightOrNull(operation: (Long, acc: Long) -> Lo
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value. Returns null if the array is empty.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -14999,7 +15251,13 @@ public inline fun FloatArray.reduceRightOrNull(operation: (Float, acc: Float) ->
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value. Returns null if the array is empty.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -15016,7 +15274,13 @@ public inline fun DoubleArray.reduceRightOrNull(operation: (Double, acc: Double)
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value. Returns null if the array is empty.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -15033,7 +15297,13 @@ public inline fun BooleanArray.reduceRightOrNull(operation: (Boolean, acc: Boole
 }
 
 /**
- * Accumulates value starting with last element and applying [operation] from right to left to each element and current accumulator value. Returns null if the array is empty.
+ * Accumulates value starting with the last element and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
+ * Returns null if the array is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */

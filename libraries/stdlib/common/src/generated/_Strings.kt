@@ -1207,9 +1207,14 @@ public inline fun <S : CharSequence> S.onEachIndexed(action: (index: Int, Char) 
 }
 
 /**
- * Accumulates value starting with the first character and applying [operation] from left to right to current accumulator value and each character.
+ * Accumulates value starting with the first character and applying [operation] from left to right
+ * to current accumulator value and each character.
+ * 
  * Throws an exception if this char sequence is empty. If the char sequence can be empty in an expected way,
  * please use [reduceOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and a character,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -1226,10 +1231,12 @@ public inline fun CharSequence.reduce(operation: (acc: Char, Char) -> Char): Cha
 /**
  * Accumulates value starting with the first character and applying [operation] from left to right
  * to current accumulator value and each character with its index in the original char sequence.
+ * 
  * Throws an exception if this char sequence is empty. If the char sequence can be empty in an expected way,
  * please use [reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of a character, current accumulator value
- * and the character itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of a character, current accumulator value and the character itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduce
  */
@@ -1246,9 +1253,11 @@ public inline fun CharSequence.reduceIndexed(operation: (index: Int, acc: Char, 
 /**
  * Accumulates value starting with the first character and applying [operation] from left to right
  * to current accumulator value and each character with its index in the original char sequence.
+ * 
  * Returns null if the char sequence is empty.
- * @param [operation] function that takes the index of a character, current accumulator value
- * and the character itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of a character, current accumulator value and the character itself,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -1264,7 +1273,13 @@ public inline fun CharSequence.reduceIndexedOrNull(operation: (index: Int, acc: 
 }
 
 /**
- * Accumulates value starting with the first character and applying [operation] from left to right to current accumulator value and each character. Returns null if the char sequence is empty.
+ * Accumulates value starting with the first character and applying [operation] from left to right
+ * to current accumulator value and each character.
+ * 
+ * Returns null if the char sequence is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and a character,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceOrNull
  */
@@ -1281,9 +1296,14 @@ public inline fun CharSequence.reduceOrNull(operation: (acc: Char, Char) -> Char
 }
 
 /**
- * Accumulates value starting with last character and applying [operation] from right to left to each character and current accumulator value.
+ * Accumulates value starting with the last character and applying [operation] from right to left
+ * to each character and current accumulator value.
+ * 
  * Throws an exception if this char sequence is empty. If the char sequence can be empty in an expected way,
  * please use [reduceRightOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes a character and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -1298,12 +1318,14 @@ public inline fun CharSequence.reduceRight(operation: (Char, acc: Char) -> Char)
 }
 
 /**
- * Accumulates value starting with last character and applying [operation] from right to left
+ * Accumulates value starting with the last character and applying [operation] from right to left
  * to each character with its index in the original char sequence and current accumulator value.
+ * 
  * Throws an exception if this char sequence is empty. If the char sequence can be empty in an expected way,
  * please use [reduceRightIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of a character, the character itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of a character, the character itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRight
  */
@@ -1319,11 +1341,13 @@ public inline fun CharSequence.reduceRightIndexed(operation: (index: Int, Char, 
 }
 
 /**
- * Accumulates value starting with last character and applying [operation] from right to left
+ * Accumulates value starting with the last character and applying [operation] from right to left
  * to each character with its index in the original char sequence and current accumulator value.
+ * 
  * Returns null if the char sequence is empty.
- * @param [operation] function that takes the index of a character, the character itself
- * and current accumulator value, and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of a character, the character itself and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */
@@ -1340,7 +1364,13 @@ public inline fun CharSequence.reduceRightIndexedOrNull(operation: (index: Int, 
 }
 
 /**
- * Accumulates value starting with last character and applying [operation] from right to left to each character and current accumulator value. Returns null if the char sequence is empty.
+ * Accumulates value starting with the last character and applying [operation] from right to left
+ * to each character and current accumulator value.
+ * 
+ * Returns null if the char sequence is empty.
+ * 
+ * @param [operation] function that takes a character and current accumulator value,
+ * and calculates the next accumulator value.
  * 
  * @sample samples.collections.Collections.Aggregates.reduceRightOrNull
  */

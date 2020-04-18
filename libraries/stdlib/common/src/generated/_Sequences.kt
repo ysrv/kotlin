@@ -1372,9 +1372,14 @@ public fun <T> Sequence<T>.onEachIndexed(action: (index: Int, T) -> Unit): Seque
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
  * Throws an exception if this sequence is empty. If the sequence can be empty in an expected way,
  * please use [reduceOrNull] instead. It returns `null` when its receiver is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  *
  * The operation is _terminal_.
  * 
@@ -1393,10 +1398,12 @@ public inline fun <S, T : S> Sequence<T>.reduce(operation: (acc: S, T) -> S): S 
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original sequence.
+ * 
  * Throws an exception if this sequence is empty. If the sequence can be empty in an expected way,
  * please use [reduceIndexedOrNull] instead. It returns `null` when its receiver is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  *
  * The operation is _terminal_.
  * 
@@ -1416,9 +1423,11 @@ public inline fun <S, T : S> Sequence<T>.reduceIndexed(operation: (index: Int, a
 /**
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original sequence.
+ * 
  * Returns null if the sequence is empty.
- * @param [operation] function that takes the index of an element, current accumulator value
- * and the element itself and calculates the next accumulator value.
+ * 
+ * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
+ * and calculates the next accumulator value.
  *
  * The operation is _terminal_.
  * 
@@ -1437,7 +1446,13 @@ public inline fun <S, T : S> Sequence<T>.reduceIndexedOrNull(operation: (index: 
 }
 
 /**
- * Accumulates value starting with the first element and applying [operation] from left to right to current accumulator value and each element. Returns null if the sequence is empty.
+ * Accumulates value starting with the first element and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
+ * Returns null if the sequence is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element,
+ * and calculates the next accumulator value.
  *
  * The operation is _terminal_.
  * 
