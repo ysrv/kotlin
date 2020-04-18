@@ -1006,7 +1006,12 @@ public inline fun CharSequence.count(predicate: (Char) -> Boolean): Int {
 }
 
 /**
- * Accumulates value starting with [initial] value and applying [operation] from left to right to current accumulator value and each character.
+ * Accumulates value starting with [initial] value and applying [operation] from left to right
+ * to current accumulator value and each character.
+ * 
+ * Returns the specified [initial] value if the char sequence is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and a character, and calculates the next accumulator value.
  */
 public inline fun <R> CharSequence.fold(initial: R, operation: (acc: R, Char) -> R): R {
     var accumulator = initial
@@ -1017,6 +1022,9 @@ public inline fun <R> CharSequence.fold(initial: R, operation: (acc: R, Char) ->
 /**
  * Accumulates value starting with [initial] value and applying [operation] from left to right
  * to current accumulator value and each character with its index in the original char sequence.
+ * 
+ * Returns the specified [initial] value if the char sequence is empty.
+ * 
  * @param [operation] function that takes the index of a character, current accumulator value
  * and the character itself, and calculates the next accumulator value.
  */
@@ -1028,7 +1036,12 @@ public inline fun <R> CharSequence.foldIndexed(initial: R, operation: (index: In
 }
 
 /**
- * Accumulates value starting with [initial] value and applying [operation] from right to left to each character and current accumulator value.
+ * Accumulates value starting with [initial] value and applying [operation] from right to left
+ * to each character and current accumulator value.
+ * 
+ * Returns the specified [initial] value if the char sequence is empty.
+ * 
+ * @param [operation] function that takes a character and current accumulator value, and calculates the next accumulator value.
  */
 public inline fun <R> CharSequence.foldRight(initial: R, operation: (Char, acc: R) -> R): R {
     var index = lastIndex
@@ -1042,6 +1055,9 @@ public inline fun <R> CharSequence.foldRight(initial: R, operation: (Char, acc: 
 /**
  * Accumulates value starting with [initial] value and applying [operation] from right to left
  * to each character with its index in the original char sequence and current accumulator value.
+ * 
+ * Returns the specified [initial] value if the char sequence is empty.
+ * 
  * @param [operation] function that takes the index of a character, the character itself
  * and current accumulator value, and calculates the next accumulator value.
  */
@@ -1254,7 +1270,7 @@ public inline fun CharSequence.reduceIndexed(operation: (index: Int, acc: Char, 
  * Accumulates value starting with the first character and applying [operation] from left to right
  * to current accumulator value and each character with its index in the original char sequence.
  * 
- * Returns null if the char sequence is empty.
+ * Returns `null` if the char sequence is empty.
  * 
  * @param [operation] function that takes the index of a character, current accumulator value and the character itself,
  * and calculates the next accumulator value.
@@ -1276,7 +1292,7 @@ public inline fun CharSequence.reduceIndexedOrNull(operation: (index: Int, acc: 
  * Accumulates value starting with the first character and applying [operation] from left to right
  * to current accumulator value and each character.
  * 
- * Returns null if the char sequence is empty.
+ * Returns `null` if the char sequence is empty.
  * 
  * @param [operation] function that takes current accumulator value and a character,
  * and calculates the next accumulator value.
@@ -1344,7 +1360,7 @@ public inline fun CharSequence.reduceRightIndexed(operation: (index: Int, Char, 
  * Accumulates value starting with the last character and applying [operation] from right to left
  * to each character with its index in the original char sequence and current accumulator value.
  * 
- * Returns null if the char sequence is empty.
+ * Returns `null` if the char sequence is empty.
  * 
  * @param [operation] function that takes the index of a character, the character itself and current accumulator value,
  * and calculates the next accumulator value.
@@ -1367,7 +1383,7 @@ public inline fun CharSequence.reduceRightIndexedOrNull(operation: (index: Int, 
  * Accumulates value starting with the last character and applying [operation] from right to left
  * to each character and current accumulator value.
  * 
- * Returns null if the char sequence is empty.
+ * Returns `null` if the char sequence is empty.
  * 
  * @param [operation] function that takes a character and current accumulator value,
  * and calculates the next accumulator value.

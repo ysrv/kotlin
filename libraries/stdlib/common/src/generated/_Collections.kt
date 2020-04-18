@@ -1602,7 +1602,12 @@ public inline fun <T> Iterable<T>.count(predicate: (T) -> Boolean): Int {
 }
 
 /**
- * Accumulates value starting with [initial] value and applying [operation] from left to right to current accumulator value and each element.
+ * Accumulates value starting with [initial] value and applying [operation] from left to right
+ * to current accumulator value and each element.
+ * 
+ * Returns the specified [initial] value if the collection is empty.
+ * 
+ * @param [operation] function that takes current accumulator value and an element, and calculates the next accumulator value.
  */
 public inline fun <T, R> Iterable<T>.fold(initial: R, operation: (acc: R, T) -> R): R {
     var accumulator = initial
@@ -1613,6 +1618,9 @@ public inline fun <T, R> Iterable<T>.fold(initial: R, operation: (acc: R, T) -> 
 /**
  * Accumulates value starting with [initial] value and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original collection.
+ * 
+ * Returns the specified [initial] value if the collection is empty.
+ * 
  * @param [operation] function that takes the index of an element, current accumulator value
  * and the element itself, and calculates the next accumulator value.
  */
@@ -1624,7 +1632,12 @@ public inline fun <T, R> Iterable<T>.foldIndexed(initial: R, operation: (index: 
 }
 
 /**
- * Accumulates value starting with [initial] value and applying [operation] from right to left to each element and current accumulator value.
+ * Accumulates value starting with [initial] value and applying [operation] from right to left
+ * to each element and current accumulator value.
+ * 
+ * Returns the specified [initial] value if the list is empty.
+ * 
+ * @param [operation] function that takes an element and current accumulator value, and calculates the next accumulator value.
  */
 public inline fun <T, R> List<T>.foldRight(initial: R, operation: (T, acc: R) -> R): R {
     var accumulator = initial
@@ -1640,6 +1653,9 @@ public inline fun <T, R> List<T>.foldRight(initial: R, operation: (T, acc: R) ->
 /**
  * Accumulates value starting with [initial] value and applying [operation] from right to left
  * to each element with its index in the original list and current accumulator value.
+ * 
+ * Returns the specified [initial] value if the list is empty.
+ * 
  * @param [operation] function that takes the index of an element, the element itself
  * and current accumulator value, and calculates the next accumulator value.
  */
@@ -1938,7 +1954,7 @@ public inline fun <S, T : S> Iterable<T>.reduceIndexed(operation: (index: Int, a
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element with its index in the original collection.
  * 
- * Returns null if the collection is empty.
+ * Returns `null` if the collection is empty.
  * 
  * @param [operation] function that takes the index of an element, current accumulator value and the element itself,
  * and calculates the next accumulator value.
@@ -1961,7 +1977,7 @@ public inline fun <S, T : S> Iterable<T>.reduceIndexedOrNull(operation: (index: 
  * Accumulates value starting with the first element and applying [operation] from left to right
  * to current accumulator value and each element.
  * 
- * Returns null if the collection is empty.
+ * Returns `null` if the collection is empty.
  * 
  * @param [operation] function that takes current accumulator value and an element,
  * and calculates the next accumulator value.
@@ -2031,7 +2047,7 @@ public inline fun <S, T : S> List<T>.reduceRightIndexed(operation: (index: Int, 
  * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element with its index in the original list and current accumulator value.
  * 
- * Returns null if the list is empty.
+ * Returns `null` if the list is empty.
  * 
  * @param [operation] function that takes the index of an element, the element itself and current accumulator value,
  * and calculates the next accumulator value.
@@ -2055,7 +2071,7 @@ public inline fun <S, T : S> List<T>.reduceRightIndexedOrNull(operation: (index:
  * Accumulates value starting with the last element and applying [operation] from right to left
  * to each element and current accumulator value.
  * 
- * Returns null if the list is empty.
+ * Returns `null` if the list is empty.
  * 
  * @param [operation] function that takes an element and current accumulator value,
  * and calculates the next accumulator value.

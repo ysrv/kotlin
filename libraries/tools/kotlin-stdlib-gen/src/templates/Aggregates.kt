@@ -524,6 +524,9 @@ object Aggregates : TemplateGroupBase() {
             """
             Accumulates value starting with [initial] value and applying [operation] from left to right
             to current accumulator value and each ${f.element} with its index in the original ${f.collection}.
+            
+            Returns the specified [initial] value if the ${f.collection} is empty.
+            
             @param [operation] function that takes the index of ${f.element.prefixWithArticle()}, current accumulator value
             and the ${f.element} itself, and calculates the next accumulator value.
             """
@@ -551,6 +554,9 @@ object Aggregates : TemplateGroupBase() {
             """
             Accumulates value starting with [initial] value and applying [operation] from right to left
             to each ${f.element} with its index in the original ${f.collection} and current accumulator value.
+            
+            Returns the specified [initial] value if the ${f.collection} is empty.
+            
             @param [operation] function that takes the index of ${f.element.prefixWithArticle()}, the ${f.element} itself
             and current accumulator value, and calculates the next accumulator value.
             """
@@ -591,7 +597,16 @@ object Aggregates : TemplateGroupBase() {
         inline()
         specialFor(ArraysOfUnsigned) { inlineOnly() }
 
-        doc { "Accumulates value starting with [initial] value and applying [operation] from left to right to current accumulator value and each ${f.element}." }
+        doc {
+            """
+            Accumulates value starting with [initial] value and applying [operation] from left to right 
+            to current accumulator value and each ${f.element}.
+
+            Returns the specified [initial] value if the ${f.collection} is empty.
+
+            @param [operation] function that takes current accumulator value and ${f.element.prefixWithArticle()}, and calculates the next accumulator value.
+            """
+        }
         typeParam("R")
         returns("R")
         body {
@@ -609,7 +624,16 @@ object Aggregates : TemplateGroupBase() {
         inline()
         specialFor(ArraysOfUnsigned) { inlineOnly() }
 
-        doc { "Accumulates value starting with [initial] value and applying [operation] from right to left to each ${f.element} and current accumulator value." }
+        doc {
+            """
+            Accumulates value starting with [initial] value and applying [operation] from right to left 
+            to each ${f.element} and current accumulator value.
+
+            Returns the specified [initial] value if the ${f.collection} is empty.
+
+            @param [operation] function that takes ${f.element.prefixWithArticle()} and current accumulator value, and calculates the next accumulator value.
+            """
+        }
         typeParam("R")
         returns("R")
         body {
@@ -659,7 +683,7 @@ object Aggregates : TemplateGroupBase() {
             Throws an exception if this ${f.collection} is empty. If the ${f.collection} can be empty in an expected way, 
             please use [${fName}OrNull] instead. It returns `null` when its receiver is empty."""
         else """
-            Returns null if the ${f.collection} is empty."""
+            Returns `null` if the ${f.collection} is empty."""
 
         val isLeftToRight = fName.contains("Right").not()
         val isIndexed = fName.contains("Indexed")
