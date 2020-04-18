@@ -301,8 +301,7 @@ class MemberBuilder(
 
         doc?.let { methodDoc ->
             builder.append("/**\n")
-            val docReceiver = parseTypeRef(receiver).name
-            StringReader(methodDoc.trim().replace("RECEIVER", docReceiver)).forEachLine { line ->
+            StringReader(methodDoc.trim()).forEachLine { line ->
                 builder.append(" * ").append(line.trim()).append("\n")
             }
             if (family == Sequences && sequenceClassification.isNotEmpty()) {
