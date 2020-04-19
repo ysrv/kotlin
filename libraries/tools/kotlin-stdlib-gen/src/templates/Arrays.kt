@@ -1378,20 +1378,34 @@ object ArrayOps : TemplateGroupBase() {
     }
 
     val f_sortWith_range = fn("sortWith(comparator: Comparator<in T>, fromIndex: Int = 0, toIndex: Int = size)") {
-        platforms(Platform.JVM, Platform.Native)
         include(ArraysOfObjects)
     } builder {
         doc { "Sorts a range in the array in-place with the given [comparator]." }
         appendStableSortNote()
         returns("Unit")
         on(Platform.JVM) {
+            suppress("ACTUAL_FUNCTION_WITH_DEFAULT_ARGUMENTS")
             body {
                 "java.util.Arrays.sort(this, fromIndex, toIndex, comparator)"
             }
         }
         on(Platform.Native) {
+            suppress("ACTUAL_FUNCTION_WITH_DEFAULT_ARGUMENTS")
             body {
-                "sortArrayWith(this, fromIndex, toIndex, comparator)"
+                """
+                AbstractList.checkRangeIndexes(fromIndex, toIndex, size)
+                sortArrayWith(this, fromIndex, toIndex, comparator)
+                """
+            }
+        }
+        on(Platform.JS) {
+            since("1.4")
+            suppress("ACTUAL_FUNCTION_WITH_DEFAULT_ARGUMENTS")
+            body {
+                """
+                AbstractList.checkRangeIndexes(fromIndex, toIndex, size)
+                sortArrayWith(this, fromIndex, toIndex, comparator)
+                """
             }
         }
     }

@@ -98,17 +98,6 @@ public actual fun CharArray.elementAt(index: Int): Char {
 }
 
 /**
- * Sorts a range in the array in-place descending according to their natural sort order.
- * 
- * The sort is _stable_. It means that equal elements preserve their order relative to each other after sorting.
- */
-@SinceKotlin("1.4")
-public actual fun <T : Comparable<T>> Array<out T>.sortDescending(fromIndex: Int, toIndex: Int): Unit {
-    AbstractList.checkRangeIndexes(fromIndex, toIndex, size)
-    sortArrayWith(this, fromIndex, toIndex, reverseOrder())
-}
-
-/**
  * Returns a [List] that wraps the original array.
  */
 public actual fun <T> Array<out T>.asList(): List<T> {
@@ -2004,6 +1993,18 @@ public inline fun CharArray.sort(noinline comparison: (a: Char, b: Char) -> Int)
  */
 public actual fun <T> Array<out T>.sortWith(comparator: Comparator<in T>): Unit {
     if (size > 1) sortArrayWith(this, comparator)
+}
+
+/**
+ * Sorts a range in the array in-place with the given [comparator].
+ * 
+ * The sort is _stable_. It means that equal elements preserve their order relative to each other after sorting.
+ */
+@SinceKotlin("1.4")
+@Suppress("ACTUAL_FUNCTION_WITH_DEFAULT_ARGUMENTS")
+public actual fun <T> Array<out T>.sortWith(comparator: Comparator<in T>, fromIndex: Int = 0, toIndex: Int = size): Unit {
+    AbstractList.checkRangeIndexes(fromIndex, toIndex, size)
+    sortArrayWith(this, fromIndex, toIndex, comparator)
 }
 
 /**

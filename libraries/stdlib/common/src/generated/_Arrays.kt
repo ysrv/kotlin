@@ -5910,7 +5910,9 @@ public fun CharArray.sortDescending(): Unit {
  * The sort is _stable_. It means that equal elements preserve their order relative to each other after sorting.
  */
 @SinceKotlin("1.4")
-public expect fun <T : Comparable<T>> Array<out T>.sortDescending(fromIndex: Int, toIndex: Int): Unit
+public fun <T : Comparable<T>> Array<out T>.sortDescending(fromIndex: Int, toIndex: Int): Unit {
+    sortWith(reverseOrder(), fromIndex, toIndex)
+}
 
 /**
  * Sorts a range in the array in-place descending according to their natural sort order.
@@ -8047,6 +8049,13 @@ public expect fun CharArray.sort(fromIndex: Int = 0, toIndex: Int = size): Unit
  * The sort is _stable_. It means that equal elements preserve their order relative to each other after sorting.
  */
 public expect fun <T> Array<out T>.sortWith(comparator: Comparator<in T>): Unit
+
+/**
+ * Sorts a range in the array in-place with the given [comparator].
+ * 
+ * The sort is _stable_. It means that equal elements preserve their order relative to each other after sorting.
+ */
+public expect fun <T> Array<out T>.sortWith(comparator: Comparator<in T>, fromIndex: Int = 0, toIndex: Int = size): Unit
 
 /**
  * Returns an array of Boolean containing all of the elements of this generic array.

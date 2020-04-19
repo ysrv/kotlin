@@ -276,14 +276,6 @@ object Ordering : TemplateGroupBase() {
         specialFor(ArraysOfObjects) {
             appendStableSortNote()
             body { """sortWith(reverseOrder(), fromIndex, toIndex)""" }
-            on(Platform.JS) {
-                body {
-                    """
-                    AbstractList.checkRangeIndexes(fromIndex, toIndex, size)
-                    sortArrayWith(this, fromIndex, toIndex, reverseOrder())
-                    """
-                }
-            }
         }
         body(ArraysOfPrimitives, ArraysOfUnsigned) {
             """
