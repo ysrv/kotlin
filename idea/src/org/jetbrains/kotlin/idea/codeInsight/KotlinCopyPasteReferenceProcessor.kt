@@ -357,6 +357,8 @@ class KotlinCopyPasteReferenceProcessor : CopyPastePostProcessor<BasicKotlinRefe
         findReferenceProvider: (indicator: ProgressIndicator) -> List<ReferenceToRestoreData>
     ) {
         val task = object : Task.Backgroundable(project, KotlinBundle.message("copy.paste.resolve.references"), true) {
+            override fun isHeadless(): Boolean = false
+
             override fun run(indicator: ProgressIndicator) {
                 assert(!ApplicationManager.getApplication().isWriteAccessAllowed) {
                     "Resolving references on dispatch thread leads to live lock"
