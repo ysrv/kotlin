@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2020 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
 
@@ -8,7 +8,7 @@ package test.collections.behaviors
 import test.collections.CompareContext
 
 public fun <T> CompareContext<List<T>>.listBehavior() {
-    equalityBehavior()
+    equalityBehavior(withToString = true)
     collectionBehavior()
     compareProperty({ listIterator() }, { listIteratorBehavior() })
     compareProperty({ listIterator(0) }, { listIteratorBehavior() })
@@ -62,14 +62,14 @@ public fun <T> CompareContext<Iterator<T>>.iteratorBehavior() {
     propertyFails { next() }
 }
 
-public fun <T> CompareContext<Set<T>>.setBehavior(objectName: String = "") {
-    equalityBehavior(objectName)
+public fun <T> CompareContext<Set<T>>.setBehavior(objectName: String = "", ordered: Boolean = false) {
+    equalityBehavior(objectName, withToString = ordered)
     collectionBehavior(objectName)
     compareProperty({ iterator() }, { iteratorBehavior() })
 }
 
-public fun <K, V> CompareContext<Map<K, V>>.mapBehavior() {
-    equalityBehavior()
+public fun <K, V> CompareContext<Map<K, V>>.mapBehavior(ordered: Boolean = false) {
+    equalityBehavior(withToString = ordered)
     propertyEquals { size }
     propertyEquals { isEmpty() }
 
@@ -82,16 +82,18 @@ public fun <K, V> CompareContext<Map<K, V>>.mapBehavior() {
     propertyEquals { containsValue(values.firstOrNull()) }
     propertyEquals { get(null as Any?) }
 
-    compareProperty({ keys }, { setBehavior("keySet") })
-    compareProperty({ entries }, { setBehavior("entrySet") })
+    compareProperty({ keys }, { setBehavior("keySet", ordered) })
+    compareProperty({ entries }, { setBehavior("entrySet", ordered) })
     compareProperty({ values }, { collectionBehavior("values") })
 }
 
-public fun <T> CompareContext<T>.equalityBehavior(objectName: String = "") {
+public fun <T> CompareContext<T>.equalityBehavior(objectName: String = "", withToString: Boolean = true) {
     val prefix = objectName + if (objectName.isNotEmpty()) "." else ""
     equals(objectName)
     propertyEquals(prefix + "hashCode") { hashCode() }
-    propertyEquals(prefix + "toString") { toString() }
+    if (withToString) {
+        propertyEquals(prefix + "toString") { toString() }
+    }
 }
 
 
