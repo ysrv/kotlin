@@ -264,27 +264,6 @@ object Ordering : TemplateGroupBase() {
         }
     }
 
-    val f_sortDescending_range = fn("sortDescending(fromIndex: Int, toIndex: Int)") {
-        include(ArraysOfObjects, ArraysOfPrimitives, ArraysOfUnsigned)
-        exclude(PrimitiveType.Boolean)
-    } builder {
-        since("1.4")
-        doc { """Sorts a range in the ${f.collection} in-place descending according to their natural sort order.""" }
-        returns("Unit")
-        typeParam("T : Comparable<T>")
-
-        specialFor(ArraysOfObjects) {
-            appendStableSortNote()
-            body { """sortWith(reverseOrder(), fromIndex, toIndex)""" }
-        }
-        body(ArraysOfPrimitives, ArraysOfUnsigned) {
-            """
-            sort(fromIndex, toIndex)
-            reverse(fromIndex, toIndex)
-            """
-        }
-    }
-
     val f_sortedDescending = fn("sortedDescending()") {
         includeDefault()
         exclude(PrimitiveType.Boolean)
